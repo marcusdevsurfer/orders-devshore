@@ -42,8 +42,9 @@ const steps = [
 ];
 
 export default function RestaurantPage({ params }) {
-    const restaurantNameRaw = decodeURIComponent(params.restaurant);
-    const restaurantName = restaurantNameRaw
+    const {restaurant} = params;
+
+    const restaurantName = restaurant
         .split("-")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
@@ -145,12 +146,12 @@ export default function RestaurantPage({ params }) {
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
             <Header />
-            <div className="max-w-7xl mx-auto px-6 py-16 pt-24">
+            <div className="max-w-8xl mx-auto px-3 sm:px-4 md:px-6 py-8 md:py-16 pt-20 md:pt-24">
                 <HeroSection restaurantName={restaurantName} />
                 <ProgressBar currentStep={currentStep} />
 
                 {/* Step Content */}
-                <div className="bg-white rounded-xl shadow-lg p-8">
+                <div className="bg-white rounded-lg md:rounded-xl shadow-md md:shadow-lg p-4 md:p-8">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentStep}

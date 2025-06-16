@@ -2,10 +2,10 @@
 import { motion } from "framer-motion";
 
 const steps = [
-    { id: "products", title: "Selección de Productos" },
-    { id: "customer", title: "Información del Cliente" },
-    { id: "delivery", title: "Tipo de Entrega" },
-    { id: "review", title: "Revisión del Pedido" },
+    { id: "products", title: "Selección de Productos", icon: "ui-checks-grid" },
+    { id: "customer", title: "Información del Cliente", icon: "person" },
+    { id: "delivery", title: "Tipo de Entrega", icon: "truck" },
+    { id: "review", title: "Revisión del Pedido", icon: "bag-check" },
 ];
 
 export default function ProgressBar({ currentStep }) {
@@ -15,11 +15,10 @@ export default function ProgressBar({ currentStep }) {
                 {steps.map((step, index) => (
                     <div
                         key={step.id}
-                        className={`flex-1 text-center ${
-                            index <= currentStep ? "text-blue-800" : "text-gray-400"
-                        }`}
+                        className={`flex-1 text-center ${index <= currentStep ? "text-blue-800" : "text-gray-400"}`}
                     >
-                        <div className="text-sm font-medium">{step.title}</div>
+                        <i className={`text-sm lg:text-lg  bi bi-${step.icon}`}></i>
+                        <div className="text-sm text-wrap lg:text-lg font-medium">{step.title}</div>
                     </div>
                 ))}
             </div>
