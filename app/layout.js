@@ -1,4 +1,6 @@
 import "./globals.css";
+//importa bootstrap icons
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const metadata = {
   title: "Orders App",
