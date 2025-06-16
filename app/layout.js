@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "leaflet/dist/leaflet.css";
 import { CartProvider } from "./context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });

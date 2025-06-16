@@ -28,9 +28,17 @@ export default function OrderReview({ formData, cart, cartTotal, onPrevStep, onS
                             {formData.orderType === "pickup" ? "Para Recoger" : "A Domicilio"}
                         </p>
                         {formData.orderType === "delivery" && (
-                            <p className="text-gray-700">
-                                <span className="font-medium">Dirección:</span> {formData.address}
-                            </p>
+                            <>
+                                <p className="text-gray-700">
+                                    <span className="font-medium">Dirección:</span> {formData.address}
+                                </p>
+                                {formData.location && (
+                                    <p className="text-gray-700">
+                                        <span className="font-medium">Coordenadas:</span>{" "}
+                                        {formData.location.lat.toFixed(6)}, {formData.location.lng.toFixed(6)}
+                                    </p>
+                                )}
+                            </>
                         )}
                         {formData.notes && (
                             <p className="text-gray-700">
